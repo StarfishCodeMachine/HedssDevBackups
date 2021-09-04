@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MavenIntegrationFormat GenerationTime="2021-09-04T11:48:15" GeneratingUserLogin="Not Available" GeneratingSystem="Maven" DateFormat="MM/dd/yyyy">
+    <DataTransformationDefinition Name="DTE_CONDUENT_TEMPLATE_TEST" Description="Test template from Conduent" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+	${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;#-- CASE Segment --&gt;
+	&lt;#-- CASE INFO --&gt;CASE|${maven[&quot;Case.CaseID&quot;]}|${maven[&quot;Case.Status&quot;]}|${.now?string[&quot;MM/dd/yyyy&quot;]}
+&lt;@compress_single_line&gt;&lt;#-- PERSON Segment --&gt;
+	&lt;#-- PERSON ID --&gt;PERSON|${maven[&quot;Party.ExternalID&quot;]}
+	&lt;#-- PERSON NAME --&gt;|${maven[&quot;Party.FirstName&quot;]}^${maven[&quot;Party.LastName&quot;]}
+	&lt;#-- PERSON DOB^AGE --&gt;|${maven[&quot;Party.BirthDate&quot;]}^${maven[&quot;Answer.AGE_YEARS&quot;]}
+	&lt;#-- PERSON GENDER CODE --&gt;|${referenceCodeDescriptionLookup(&quot;GENDER_TO_CODE&quot;,maven[&quot;Party.Gender&quot;])}
+	&lt;#-- PERSON GENDER --&gt;^${maven[&quot;Party.Gender&quot;]}
+	&lt;#-- PERSON ZIP --&gt;|${maven[&quot;Party.PrimaryContactPoint.PostalCode&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- MODEL Segment --&gt;&lt;#assign mdlCount = 1&gt;
+	&lt;#-- MODEL FOOD --&gt;&lt;#if maven[&quot;Output.foodEatenFinal_Output&quot;]?has_content&gt;
+							&lt;#list maven[&quot;Output.foodEatenFinal_Output.list&quot;] as eaten&gt;
+								&lt;@compress_single_line&gt;
+								MODEL|${mdlCount}|FOOD EATEN|${eaten}
+								&lt;/@compress_single_line&gt;
+								&lt;#assign mdlCount = mdlCount + 1&gt;
+							&lt;/#list&gt;
+						&lt;/#if&gt;
+	&lt;#-- MODEL SYMPTOMS --&gt;&lt;#if maven[&quot;Answer.POST_CONSUMPTION_SYMPTOMS&quot;]?has_content&gt;
+								&lt;@compress_single_line&gt;
+								MODEL|${mdlCount}|SYMPTOMS|${maven[&quot;Answer.POST_CONSUMPTION_SYMPTOMS&quot;]?replace(&quot;, &quot;, &quot;^&quot;)}
+								&lt;#assign mdlCount = mdlCount + 1&gt;
+								&lt;/@compress_single_line&gt;
+							&lt;/#if&gt;
+	&lt;#-- MODEL HOSP --&gt;&lt;#if maven[&quot;Answer.FACILITY_LINK&quot;]?has_content&gt;
+								&lt;@compress_single_line&gt;
+								MODEL|${mdlCount}|HOSPITALIZED|${maven[&quot;Answer.FACILITY_LINK&quot;]}
+								&lt;/@compress_single_line&gt;
+								&lt;#assign mdlCount = mdlCount + 1&gt;
+							&lt;/#if&gt;
+	&lt;#-- MODEL FACILITY --&gt;&lt;#if maven[&quot;Answer.FACILITY_LINK_ID&quot;]?has_content&gt;
+								&lt;@compress_single_line&gt;
+								MODEL|${mdlCount}|HOSPITAL|${maven[&quot;Answer.FACILITY_LINK_ID&quot;]}
+								&lt;/@compress_single_line&gt;
+								&lt;#assign mdlCount = mdlCount + 1&gt;
+							&lt;/#if&gt;
+" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="DTE_SALMONELLA_TEMPLATE_TEST " Description="Test template from Conduent" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+	${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;#-- CASE Segment --&gt;CASE
+&lt;#-- column names --&gt;|Case ID|Case Status|Date
+&lt;#-- CASE INFO --&gt;|${maven[&quot;Case.CaseID&quot;]}|${maven[&quot;Case.Status&quot;]}|${.now?string[&quot;MM/dd/yyyy&quot;]}
+&lt;#-- PERSON Segment --&gt;PERSON
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Person ID|
+Person name|
+BirthDate^Age|
+Gender|
+Race|
+Ethnicity| 
+Street Address|
+City|
+State|
+Zip
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- PERSON ID --&gt;|${maven[&quot;Party.ExternalID&quot;]}
+	&lt;#-- PERSON NAME --&gt;|${maven[&quot;Party.FirstName&quot;]}^${maven[&quot;Party.LastName&quot;]}
+	&lt;#-- PERSON DOB^AGE --&gt;|${maven[&quot;Party.BirthDate&quot;]}^${maven[&quot;Answer.AGE_YEARS&quot;]}
+	&lt;#-- PERSON GENDER CODE --&gt;|${referenceCodeDescriptionLookup(&quot;GENDER_TO_CODE&quot;,maven[&quot;Party.Gender&quot;])}
+	&lt;#-- PERSON GENDER --&gt;^${maven[&quot;Party.Gender&quot;]}
+	&lt;#-- PERSON RACE --&gt;^|${maven[&quot;Answer.RACE&quot;]}
+	&lt;#-- PERSON ETHNICITY --&gt;|^${maven[&quot;Answer.HISPANIC&quot;]}
+	&lt;#-- PERSON STREETADDRESS --&gt;|${maven[&quot;Party.PrimaryContactPoint.AddressLine1&quot;]}
+	&lt;#-- PERSON CITY --&gt;|${maven[&quot;Party.PrimaryContactPoint.City&quot;]}
+	&lt;#-- PERSON STATE --&gt;|${maven[&quot;Party.PrimaryContactPoint.State&quot;]}
+	&lt;#-- PERSON ZIP --&gt;|${maven[&quot;Party.PrimaryContactPoint.PostalCode&quot;]}	
+&lt;/@compress_single_line&gt;
+&lt;#-- ORDER Segment --&gt;ORDER INFORMATION
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Reporting Facility|
+Ordering Facility|
+Ordering Facility Other|
+Ordering Provider|
+Program Area|
+Jurisdiction|
+Date received by public health|
+Accession Number|
+Specimen Source|
+Date specimen collected|
+Pregnant
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- REPORTING FACILITY --&gt;|${maven[&quot;Answer.REPORTING_SOURCE&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestOrdFacDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestOrdFacDTE2.list&quot;] as HEALTH_FACILITY&gt;
+				            ${referenceCodeDescriptionLookup(&quot;HEALTH_FACILITY&quot;,HEALTH_FACILITY)} 
+							&lt;#if HEALTH_FACILITY_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestOrdFacDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestOrdFacODTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestOrdFacODTE2.list&quot;] as ORDFACO&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestOrdFacODTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestOrdProvDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestOrdProvDTE2.list&quot;] as ORDPROVID&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestOrdProvDTE2&quot;]}
+	&lt;#-- PROGRAM AREA --&gt;|${maven[&quot;Answer.DSHS_DISEASE_CODE&quot;]}
+	&lt;#-- JURISDICTION --&gt;|${maven[&quot;Answer.OWNING_JURISDICTION&quot;]}
+	&lt;#-- DATE RECEIVED --&gt;|${maven[&quot;Answer.REPORTING_SOURCE_DATE_SUBMITTED&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestSpecNumDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestSpecNumDTE2.list&quot;] as SPECNUM&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestSpecNumDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestSpecSourceDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestSpecSourceDTE2.list&quot;] as SNOMED&gt;
+				            ${referenceCodeDescriptionLookup(&quot;SNOMED&quot;,SNOMED)} 
+							&lt;#if SNOMED_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestSpecSourceDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestSpecDateDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestSpecDateDTE2.list&quot;] as SPECDATE&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestSpecDateDTE2&quot;]}
+	&lt;#-- CURRENTLY_PREGNANT --&gt;|${maven[&quot;Answer.CURRENTLY_PREGNANT&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- ORDER Segment --&gt;TEST RESULTS
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Resulted Test|
+Result
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+|&lt;#if maven[&quot;Output.InvestigationTestTestDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestTestDTE2.list&quot;] as LOINC&gt;
+				            ${referenceCodeDescriptionLookup(&quot;LOINC&quot;,LOINC)} &lt;#--LOINC to Description --&gt;
+							&lt;#if LOINC_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestTestDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestResultDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestResultDTE2.list&quot;] as SNOMED&gt;
+				            ${referenceCodeDescriptionLookup(&quot;SNOMED&quot;,SNOMED)} &lt;#--SNOMED to Description --&gt;
+							&lt;#if SNOMED_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestResultDTE2&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- INVESTIGATION Segment --&gt;INVESTIGATION SUMMARY
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Jurisdiction|
+Program Area|
+Investigation Start Date|
+Investigation status
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- JURISDICTION --&gt;|${maven[&quot;Answer.OWNING_JURISDICTION&quot;]}
+	&lt;#-- PROGRAM AREA --&gt;|${maven[&quot;Answer.DSHS_DISEASE_CODE&quot;]}
+	&lt;#-- INVESTIGATION START DATE --&gt;|${maven[&quot;Answer.INVESTIGATION_START_DATE&quot;]}
+	&lt;#-- INVESTIGATION STATUS --&gt;|${maven[&quot;Answer.INVESTIGATION_STATUS&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- REPORTING Segment --&gt;REPORTING SOURCE
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Date of report|
+Reporting source|
+Earliest date reported to City|
+Earliest date reported to state|
+Reporter
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- DATE OF REPORT --&gt;|${maven[&quot;Answer.DATE_TRANSMITTED_CDC&quot;]}
+	&lt;#-- REPORTING SOURCE --&gt;|${maven[&quot;Answer.REPORTING_SOURCE&quot;]}
+	&lt;#-- EARLIEST DATE--&gt;|${maven[&quot;Answer.REPORTING_SOURCE_DATE_SUBMITTED&quot;]}
+	&lt;#-- DATE REPORTED TO STATE --&gt;|${maven[&quot;Answer.DATE_TRANSMITTED_CDC&quot;]}
+	&lt;#-- REPORTER --&gt;|${maven[&quot;Answer.SUBMITTED_BY&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- CLINICAL Segment --&gt;CLINICAL
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Physician|
+Diagnosis Date|
+Illness onset date|
+Age at onset|
+Patient pregnant|
+Die from illness
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- PHYSICIAN --&gt;|${maven[&quot;Answer.HCP&quot;]}
+	&lt;#-- DIAGNOSIS DATE --&gt;|${maven[&quot;Answer.LHD_DIAGNOSIS_DATE&quot;]}
+	&lt;#-- ILLNESS ONSET DATE --&gt;|${maven[&quot;Answer.SYMPTOM_ONSET_DATE&quot;]}
+	&lt;#-- AGE AT ONSET --&gt;|${maven[&quot;Answer.AGE_YEARS&quot;]}
+	&lt;#-- CURRENTLY_PREGNANT --&gt;|${maven[&quot;Answer.CURRENTLY_PREGNANT&quot;]}
+	&lt;#-- DIE FROM ILLNESS --&gt;|${maven[&quot;PATIENT_DIED_FROM_ILLNESS&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- EPIDEMIOLOGIC Segment --&gt;EPIDEMIOLOGIC
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Part of outbreak|
+Outbreak name|
+Confirmation method|
+Confirmation date|
+Case status|
+MMWR Week|
+MMWR Year
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- OUTBREAK --&gt;|${maven[&quot;Answer.OUTBREAK_INDICATOR&quot;]}
+	&lt;#-- OUTBREAK NAME --&gt;|${maven[&quot;Answer.OUTBREAK_INDICATOR_NAME&quot;]}
+	&lt;#-- CONFIRMATION METHOD --&gt;|${maven[&quot;Answer.CONFIRMATION_METHOD&quot;]}
+	&lt;#-- CONFIRMATION METHOD DATE --&gt;|${maven[&quot;Answer.CONFIRMATION_METHOD_DATE&quot;]}
+	&lt;#-- CASE STATUS --&gt;|${maven[&quot;Answer.DISEASE_STATUS_STANDARD&quot;]}
+	&lt;#-- MMWR WEEK --&gt;|${maven[&quot;Answer.MMWR_WEEK&quot;]}
+	&lt;#-- MMWR YEAR --&gt;|${maven[&quot;Answer.MMWR_YEAR&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- CUSTOMFIELDS Segment --&gt;CUSTOM FIELDS
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Earliest date suspected
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- EARLIEST DATE SUSPECTED --&gt;|${maven[&quot;Answer.EARLIEST_DATE_SUSPECTED&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- CONDITIONSPECIFIC Segment --&gt;CONDITION SPECIFIC CUSTOM FIELDS
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Isolate serotyped|
+Serotype|
+If other specify|
+Epi-linked to laboratory confirmed case
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- ISOLATE SEROTYPED --&gt;|${maven[&quot;Answer.SEROTYPE_LAB&quot;]}
+	&lt;#-- SEROTYPE --&gt;|${maven[&quot;Answer.SEROTYPE_LAB_SEROTYPE&quot;]}
+	&lt;#-- OTHER SEROTYPE --&gt;|${maven[&quot;Answer.SEROTYPE_LAB_SEROTYPE_OTHER_SPEC&quot;]}
+	&lt;#-- EPILINK --&gt;|${maven[&quot;Answer.EPI_LINK_LAB&quot;]}
+&lt;/@compress_single_line&gt;" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="MK DTE TEST" Description="MK DTE TEST" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+DateExported,
+CaseExternalID,
+CaseStatus,
+LastName,
+FirstName,
+BirthDate,
+Gender,
+InvestigationStatus,
+TestName,
+LOINC,
+TestResult,
+SNOMED
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;&lt;#-- Put the selected vars on one line --&gt;
+${.now?string[&quot;yyyyMMdd&quot;]},
+${maven[&quot;Case.ExternalID&quot;]},
+${maven[&quot;Case.Status&quot;]},
+${maven[&quot;Party.LastName&quot;]},
+${maven[&quot;Party.FirstName&quot;]},
+${maven[&quot;Party.BirthDate&quot;]?date(&quot;MM/dd/yyyy&quot;)?string[&quot;yyyy-MM-dd&quot;]},
+${referenceCodeDescriptionLookup(&quot;DTE Gender&quot;,maven[&quot;Party.Gender&quot;])},
+${maven[&quot;Output.InvestigationStatus&quot;]!&quot;Unknown&quot;},
+&lt;#if maven[&quot;Output.InvestigationTestTestDTE&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestTestDTE.list&quot;] as LOINC&gt;
+				            ${referenceCodeDescriptionLookup(&quot;LOINC&quot;,LOINC)} &lt;#--LOINC to Description --&gt;
+							&lt;#if LOINC_has_next&gt;~&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestTestDTE&quot;]},
+&lt;#if maven[&quot;Output.InvestigationTestResultDTE&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestResultDTE.list&quot;] as SNOMED&gt;
+				            ${referenceCodeDescriptionLookup(&quot;SNOMED&quot;,SNOMED)} &lt;#--SNOMED to Description --&gt;
+							&lt;#if SNOMED_has_next&gt;~&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestResultDTE&quot;]}
+&lt;/@compress_single_line&gt;
+
+&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+DateExported,
+CaseExternalID,
+CaseStatus,
+LastName,
+FirstName,
+BirthDate,
+Gender,
+InvestigationStatus,
+TestName,
+LOINC,
+SNOMED
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;&lt;#-- Put the selected vars on one line --&gt;
+${.now?string[&quot;yyyyMMdd&quot;]},
+${maven[&quot;Case.ExternalID&quot;]},
+${maven[&quot;Case.Status&quot;]},
+${maven[&quot;Party.LastName&quot;]},
+${maven[&quot;Party.FirstName&quot;]},
+${maven[&quot;Party.BirthDate&quot;]?date(&quot;MM/dd/yyyy&quot;)?string[&quot;yyyy-MM-dd&quot;]},
+${referenceCodeDescriptionLookup(&quot;DTE Gender&quot;,maven[&quot;Party.Gender&quot;])},
+${maven[&quot;Output.InvestigationStatus&quot;]!&quot;Unknown&quot;},
+&lt;#if maven[&quot;Output.InvestigationTestTestDTE&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestTestDTE.list&quot;] as LOINC&gt;
+				            ${referenceCodeDescriptionLookup(&quot;LOINC&quot;,LOINC)} &lt;#--LOINC to Description --&gt;
+							&lt;#if LOINC_has_next&gt;~&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestTestDTE&quot;]},
+${maven[&quot;Output.InvestigationTestResultDTE&quot;]}
+&lt;/@compress_single_line&gt;
+
+
+
+
+&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;@compress_single_line&gt;&lt;#-- MSH Segment --&gt;
+	&lt;#-- MSH 1-4 --&gt;MSH|^~\&amp;|HI-EDSS_Maven^2.16.840.1.113883.3.3551.1^ISO|HI-EDSS_Maven^2.16.840.1.113883.3.3551.1^ISO
+	&lt;#-- MSH 5-6 --&gt;|CDC^2.16.840.1.114222.4.3.2.3^ISO|PHIN^2.16.840.1.114222^ISO
+	&lt;#-- MSH 7 --&gt;|${.now?string[&quot;yyyyMMdd&quot;]}
+	&lt;#-- MSH 8 --&gt;|
+	&lt;#-- MSH 9 --&gt;|ORU^R01^ORU_R01
+	&lt;#-- MSH 10 --&gt;|${maven[&quot;Party.ExternalID&quot;]}
+	&lt;#-- MSH 11 --&gt;|P^T
+	&lt;#-- MSH 12 --&gt;|2.5
+	&lt;#-- MSH 13-20 --&gt;||||||||
+	&lt;#-- MSH 21 --&gt;|NND_ORU_v2.0^PHINProfileID^2.16.840.1.114222.4.10.3^ISO~Arbo_Case_Map_v1.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;&lt;#-- PID Segment --&gt;
+	&lt;#-- PID 1-2 --&gt;PID|1|
+	&lt;#-- PID 3 --&gt;|${maven[&quot;Party.ExternalID&quot;]}^^^444444&amp;OID&amp;ISO
+	&lt;#-- PID 4-6 --&gt;||~^^^^^^S|
+	&lt;#-- PID 7 --&gt;|${maven[&quot;Party.BirthDate&quot;]?date(&quot;MM/dd/yyyy&quot;)?string[&quot;yyyyMMdd&quot;]}
+	&lt;#-- PID 8 --&gt;|${referenceCodeDescriptionLookup(&quot;ARB_GENDER_TO_CODE&quot;,maven[&quot;Party.Gender&quot;])}
+	&lt;#-- PID 9 --&gt;|
+	&lt;#-- PID 10 --&gt;|&lt;#if maven[&quot;Output.DEM152_OUTPUT&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.DEM152_OUTPUT.list&quot;] as race&gt;
+				            ${referenceCodeDescriptionLookup(&quot;ARB_RACE_TO_CODE&quot;,race)}^ &lt;#--Maven Race Code to cdc Race Code --&gt;
+				            ${referenceCodeDescriptionLookup(&quot;ARB_RACE_TO_DESC&quot;,race)}^ &lt;#--Maven Race Code to cdc Race Description --&gt;
+				            2.16.840.1.114222.4.5.232
+							&lt;#if race_has_next&gt;~&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+	&lt;#-- PID 11 --&gt;|^^^
+					${referenceCodeDescriptionLookup(&quot;ARB_STATE_TO_FIPS&quot;,maven[&quot;Party.PrimaryContactPoint.State&quot;])}^
+					${maven[&quot;Party.PrimaryContactPoint.PostalCode&quot;]}^
+					^^
+					&lt;#assign county = maven[&quot;Party.PrimaryContactPoint.County&quot;]?replace(&quot; County&quot;, &quot;&quot;) + &quot;, &quot; + maven[&quot;Party.PrimaryContactPoint.State&quot;]&gt;${referenceCodeDescriptionLookup(&quot;ARB_COUNTY_TO_FIPS&quot;,county)}^
+					^^
+	&lt;#-- PID 12-21 --&gt;||||||||||
+	&lt;#-- PID 22 --&gt;|&lt;#if maven[&quot;Answer.HISPANIC&quot;]?has_content&gt;
+						${referenceCodeDescriptionLookup(&quot;ARB_ETHNICITY_TO_CODE&quot;,maven[&quot;Answer.HISPANIC&quot;])}^ &lt;#--Maven Ethnicity Code to cdc Ethnicity Code --&gt;
+				        ${referenceCodeDescriptionLookup(&quot;ARB_ETHNICITY_TO_DESC&quot;,maven[&quot;Answer.HISPANIC&quot;])}^ &lt;#--Maven Ethnicity Code to cdc Ethnicity Description --&gt;
+				        &lt;#if maven[&quot;Answer.HISPANIC&quot;] == &quot;Unknown&quot;&gt;NULLFL
+				        &lt;#else&gt;2.16.840.1.114222.4.5.232
+				        &lt;/#if&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+&lt;/@compress_single_line&gt;
+" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="DTE_PERTUSSIS_TEMPLATE_TEST" Description="Test template from Conduent" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+	${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;#-- CASE Segment --&gt;CASE
+&lt;#-- column names --&gt;|Case ID|Case Status|Date
+&lt;#-- CASE INFO --&gt;|${maven[&quot;Case.CaseID&quot;]}|${maven[&quot;Case.Status&quot;]}|${.now?string[&quot;MM/dd/yyyy&quot;]}
+&lt;#-- PERSON Segment --&gt;PERSON
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Person ID|
+Person name|
+BirthDate^Age|
+Gender|
+Race|
+Ethnicity| 
+Street Address|
+City|
+State|
+Zip
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- PERSON ID --&gt;|${maven[&quot;Party.ExternalID&quot;]}
+	&lt;#-- PERSON NAME --&gt;|${maven[&quot;Party.FirstName&quot;]}^${maven[&quot;Party.LastName&quot;]}
+	&lt;#-- PERSON DOB^AGE --&gt;|${maven[&quot;Party.BirthDate&quot;]}^${maven[&quot;Answer.AGE_YEARS&quot;]}
+	&lt;#-- PERSON GENDER CODE --&gt;|${referenceCodeDescriptionLookup(&quot;GENDER_TO_CODE&quot;,maven[&quot;Party.Gender&quot;])}
+	&lt;#-- PERSON GENDER --&gt;^${maven[&quot;Party.Gender&quot;]}
+	&lt;#-- PERSON RACE --&gt;^|${maven[&quot;Answer.RACE&quot;]}
+	&lt;#-- PERSON ETHNICITY --&gt;|^${maven[&quot;Answer.HISPANIC&quot;]}
+	&lt;#-- PERSON STREETADDRESS --&gt;|${maven[&quot;Party.PrimaryContactPoint.AddressLine1&quot;]}
+	&lt;#-- PERSON CITY --&gt;|${maven[&quot;Party.PrimaryContactPoint.City&quot;]}
+	&lt;#-- PERSON STATE --&gt;|${maven[&quot;Party.PrimaryContactPoint.State&quot;]}
+	&lt;#-- PERSON ZIP --&gt;|${maven[&quot;Party.PrimaryContactPoint.PostalCode&quot;]}	
+&lt;/@compress_single_line&gt;
+&lt;#-- LABREPORT Segment --&gt;LAB REPORT INFORMATION
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Reporting Facility|
+Ordering Facility|
+Ordering Facility Other|
+Ordering Provider|
+Program Area|
+Jurisdiction|
+Date received by public health|
+Ordered Test|
+Accession Number|
+Specimen Source|
+Date Specimen Collected|
+Pregnant|
+Weeks|
+Resulted Test|
+Result
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- REPORTING FACILITY --&gt;|${maven[&quot;Answer.REPORTING_SOURCE&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestOrdFacDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestOrdFacDTE2.list&quot;] as HEALTH_FACILITY&gt;
+				            ${referenceCodeDescriptionLookup(&quot;HEALTH_FACILITY&quot;,HEALTH_FACILITY)} 
+							&lt;#if HEALTH_FACILITY_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestOrdFacDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestOrdFacODTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestOrdFacODTE2.list&quot;] as ORDFACO&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestOrdFacODTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestOrdProvDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestOrdProvDTE2.list&quot;] as ORDPROVID&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestOrdProvDTE2&quot;]}
+	&lt;#-- PROGRAM AREA --&gt;|${maven[&quot;Answer.DSHS_DISEASE_CODE&quot;]}
+	&lt;#-- JURISDICTION --&gt;|${maven[&quot;Answer.OWNING_JURISDICTION&quot;]}
+	&lt;#-- DATE RECEIVED --&gt;|${maven[&quot;Answer.REPORTING_SOURCE_DATE_SUBMITTED&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestTestDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestTestDTE2.list&quot;] as LOINC&gt;
+				            ${referenceCodeDescriptionLookup(&quot;LOINC&quot;,LOINC)} &lt;#--LOINC to Description --&gt;
+							&lt;#if LOINC_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestTestDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestSpecNumDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestSpecNumDTE2.list&quot;] as SPECNUM&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestSpecNumDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestSpecSourceDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestSpecSourceDTE2.list&quot;] as SNOMED&gt;
+				            ${referenceCodeDescriptionLookup(&quot;SNOMED&quot;,SNOMED)} 
+							&lt;#if SNOMED_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestSpecSourceDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestSpecDateDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestSpecDateDTE2.list&quot;] as SPECDATE&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;
+${maven[&quot;Output.InvestigationTestSpecDateDTE2&quot;]}
+	&lt;#-- CURRENTLY_PREGNANT --&gt;|${maven[&quot;Answer.CURRENTLY_PREGNANT&quot;]}
+	&lt;#-- CURRENTLY_PREGNANT_WEEKS --&gt;|${maven[&quot;Answer.CURRENTLY_PREGNANT_NUMBER_WEEKS_GESTATION&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestTestDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestTestDTE2.list&quot;] as LOINC&gt;
+				            ${referenceCodeDescriptionLookup(&quot;LOINC&quot;,LOINC)} &lt;#--LOINC to Description --&gt;
+							&lt;#if LOINC_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestTestDTE2&quot;]}|
+&lt;#if maven[&quot;Output.InvestigationTestResultDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestResultDTE2.list&quot;] as SNOMED&gt;
+				            ${referenceCodeDescriptionLookup(&quot;SNOMED&quot;,SNOMED)} &lt;#--SNOMED to Description --&gt;
+							&lt;#if SNOMED_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestResultDTE2&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- INVESTIGATION Segment --&gt;INVESTIGATION SUMMARY
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Jurisdiction|
+Investigation start date|
+Investigation status|
+Investigator
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- JURISDICTION --&gt;|${maven[&quot;Answer.OWNING_JURISDICTION&quot;]}
+	&lt;#-- INVESTIGATION START DATE --&gt;|${maven[&quot;Answer.INVESTIGATION_START_DATE&quot;]}
+	&lt;#-- INVESTIGATION STATUS --&gt;|${maven[&quot;Answer.INVESTIGATION_STATUS&quot;]}
+	&lt;#-- INVESTIGATOR --&gt;|${maven[&quot;Answer.INVESTIGATORS_NAME&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- REPORTING Segment --&gt;REPORTING SOURCE
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Date of report|
+Reporting source|
+Earliest date reported to City|
+Earliest date reported to state|
+Reporter
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- DATE OF REPORT --&gt;|${maven[&quot;Answer.REPORTING_SOURCE_DATE_SUBMITTED&quot;]}
+	&lt;#-- REPORTING SOURCE --&gt;|${maven[&quot;Answer.REPORTING_SOURCE&quot;]}
+	&lt;#-- DATE REPORTED TO COUNTY --&gt;|${maven[&quot;Answer.REPORTING_SOURCE_DATE_SUBMITTED&quot;]}
+	&lt;#-- DATE REPORTED TO STATE --&gt;|${maven[&quot;Answer.DATE_TRANSMITTED_CDC&quot;]}
+	&lt;#-- REPORTER --&gt;|${maven[&quot;Answer.SUBMITTED_BY&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- CLINICAL Segment --&gt;CLINICAL
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Physician|
+Hospitalized|
+Admission date|
+Discharge date|
+Diagnosis date|
+Illness onset date|
+Less than 12 months old|
+Have cough|
+Cough onset date|
+Paroxymal cough|
+Whoop|
+Post-tussive vomiting|
+Apnea|
+Date of final interview|
+Cough at final interview|
+Cough duration days|
+Die from illness
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- PHYSICIAN --&gt;|${maven[&quot;Answer.HCP&quot;]}
+	&lt;#-- HOSPITALIZED--&gt;|${maven[&quot;Answer.HOSPITALIZED&quot;]}
+	&lt;#-- ADMISSION DATE--&gt;|${maven[&quot;Answer.HOSPITALIZED_DATE&quot;]}
+	&lt;#-- DISCHARGE DATE--&gt;|${maven[&quot;Answer.HOSPITALIZED_DISCHARGED_DATE&quot;]}
+	&lt;#-- DIAGNOSIS DATE --&gt;|${maven[&quot;Answer.LHD_DIAGNOSIS_DATE&quot;]}
+	&lt;#-- ILLNESS ONSET DATE --&gt;|${maven[&quot;Answer.SYMPTOM_ONSET_DATE&quot;]}
+	&lt;#-- LESS THAN ONE --&gt;|${maven[&quot;Answer.PATIENT_LESS_THAN_ONE&quot;]}
+	&lt;#-- COUGH --&gt;|${maven[&quot;Answer.SS_COUGH&quot;]}
+	&lt;#-- COUGH ONSET DATE --&gt;|${maven[&quot;Answer.SS_COUGH_ONSET_DATE&quot;]}
+	&lt;#-- PAROXYMAL COUGH --&gt;|${maven[&quot;Answer.SS_PAROXYSMAL_COUGH&quot;]}	
+	&lt;#-- POSTTUSSIVE VOMITING --&gt;|${maven[&quot;Answer.SS_POST_TUSSIVE_VOMITING&quot;]}	
+	&lt;#-- APNEA --&gt;|${maven[&quot;Answer.SS_APNEA&quot;]}
+	&lt;#-- DATE OF FINAL INTERVIEW --&gt;|${maven[&quot;Answer.SS_COUGH_FINAL_INTERVIEW_DATE&quot;]}
+	&lt;#-- COUGH FINAL INTERVIEW --&gt;|${maven[&quot;Answer.SS_COUGH_AT_INTERVIEW&quot;]}
+	&lt;#-- COUGH DURATION --&gt;|${maven[&quot;Answer.SS_COUGH_DURATION_FINAL_INTERVIEW&quot;]}
+	&lt;#-- PATIENT DIE --&gt;|${maven[&quot;Answer.PATIENT_DIED_FROM_ILLNESS&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- TREATMENT Segment --&gt;TREATMENT
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Antibiotics given|
+Antibiotics name|
+Start date|
+Number of days taken
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- ANTIBIOTICS --&gt;|${maven[&quot;Answer.ANTIBIOTICS_FOR_DISEASE&quot;]}
+	&lt;#-- ANTIBIOTIC NAME --&gt;|${maven[&quot;Answer.ANTIBIOTIC&quot;]}
+	&lt;#-- START DATE --&gt;|${maven[&quot;Answer.ANTIBIOTIC_START_DATE&quot;]}
+	&lt;#-- NUMBER OF DAYS --&gt;|${maven[&quot;Answer.ANTIBIOTIC_DAYS&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- LAB Segment --&gt;LABORATORY
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|PCR specimen date|
+PCR result|
+Lab where PCR was performed|
+Specify Lab
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- PCR SPECIMEN DATE --&gt;|${maven[&quot;Answer.CDC_PERT_PCR_SPECIMEN_COLLECTION_DATE&quot;]}
+	&lt;#-- PCR RESULT --&gt;|${maven[&quot;Answer.CDC_PERT_PCR_RESULT&quot;]}
+	&lt;#-- PCR LAB --&gt;|${maven[&quot;Answer.CDC_PERT_PCR_LAB&quot;]}
+	&lt;#-- PCR LAB OTHER --&gt;|${maven[&quot;Answer.CDC_PERT_PCR_LAB_OTHER&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- VACCINE Segment --&gt;VACCINE INFORMATION
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Receive pertussis vaccine|
+Reason not vaccinated|
+Doses of vaccine|
+Reason for less than 3 doses|
+Vaccines given 2 weeks or more
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- VACCINATED --&gt;|${maven[&quot;Answer.VACCINATED&quot;]}
+	&lt;#-- NOT VACCINATED REASON --&gt;|${maven[&quot;Answer.VACCINATED_NO_REASON_STANDARD&quot;]}
+	&lt;#-- NUMBER OF DOSES --&gt;|${maven[&quot;Answer.VACCINE_NUMBER_DOSES&quot;]}
+	&lt;#-- LESS THAN 3 DOSES REASON --&gt;|${maven[&quot;Answer.REASON_LESS_THAN_THREE_DOSES&quot;]}
+	&lt;#-- NUMBER OF DOSES 2 WEEKS --&gt;|${maven[&quot;Answer.VACCINE_NUMBER_DOSES_PRIOR_TO_ILLNESS&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- EPIDEMIOLOGIC Segment --&gt;EPIDEMIOLOGIC
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Epi-linked|
+Case ID of Epi-link|
+Part of cluster or outbreak|
+Outbreak name|
+Suspected sources|
+Case status|
+Confirmation method|
+MMWR week|
+MMWR year
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- EPI LINKED --&gt;|${maven[&quot;Answer.EPI_LINKED_LAB&quot;]}
+	&lt;#-- EPI LINKED ID --&gt;|${maven[&quot;Answer.EPI_LINKED_LAB_ID&quot;]}
+	&lt;#-- OUTBREAK --&gt;|${maven[&quot;Answer.OUTBREAK_INDICATOR&quot;]}
+	&lt;#-- OUTBREAK NAME --&gt;|${maven[&quot;Answer.OUTBREAK_INDICATOR_NAME&quot;]}
+	&lt;#-- SUSPECTED SOURCES --&gt;|${maven[&quot;Answer.SUSPECTED_SOURCES&quot;]}
+	&lt;#-- CASE STATUS --&gt;|${maven[&quot;Answer.DISEASE_STATUS_STANDARD&quot;]}
+	&lt;#-- CONFIRMATION METHOD --&gt;|${maven[&quot;Answer.CONFIRMATION_METHOD&quot;]}
+	&lt;#-- MMWR WEEK --&gt;|${maven[&quot;Answer.MMWR_WEEK&quot;]}
+	&lt;#-- MMWR YEAR --&gt;|${maven[&quot;Answer.MMWR_YEAR&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- CUSTOMFIELDS Segment --&gt;CUSTOM FIELDS
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Earliest date suspected
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- EARLIEST DATE SUSPECTED --&gt;|${maven[&quot;Answer.EARLIEST_SUSPECT_DATE&quot;]}
+&lt;/@compress_single_line&gt;
+&lt;#-- CONDITIONSPECIFIC Segment --&gt;CONDITION SPECIFIC CUSTOM FIELDS
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+|Mother given Tdap|
+Date of Tdap
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;
+	&lt;#-- MOTHER GIVEN TDAP --&gt;|${maven[&quot;Answer.MATERNAL_TDAP_DELIVERY&quot;]}
+	&lt;#-- DATE OF TDAP --&gt;|${maven[&quot;Answer.MATERNAL_TDAP_DELIVERY_DATE&quot;]}
+&lt;/@compress_single_line&gt;" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="MK TEST" Description="mk test" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+DateExported,
+CaseExternalID,
+CaseStatus,
+LastName,
+FirstName,
+BirthDate,
+Gender,
+InvestigationStatus,
+TestName,
+LOINC,
+TestResult,
+SNOMED
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;&lt;#-- Put the selected vars on one line --&gt;
+${.now?string[&quot;yyyyMMdd&quot;]},
+${maven[&quot;Case.ExternalID&quot;]},
+${maven[&quot;Case.Status&quot;]},
+${maven[&quot;Party.LastName&quot;]},
+${maven[&quot;Party.FirstName&quot;]},
+${maven[&quot;Party.BirthDate&quot;]?date(&quot;MM/dd/yyyy&quot;)?string[&quot;yyyy-MM-dd&quot;]},
+&lt;#if maven[&quot;Output.InvestigationTestTestDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestTestDTE2.list&quot;] as LOINC&gt;
+				            ${referenceCodeDescriptionLookup(&quot;LOINC&quot;,LOINC)} &lt;#--LOINC to Description --&gt;
+							&lt;#if LOINC_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestTestDTE2&quot;]},
+&lt;#if maven[&quot;Output.InvestigationTestResultDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestResultDTE2.list&quot;] as SNOMED&gt;
+				            ${referenceCodeDescriptionLookup(&quot;SNOMED&quot;,SNOMED)} &lt;#--SNOMED to Description --&gt;
+							&lt;#if SNOMED_has_next&gt;,&lt;/#if&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestResultDTE2&quot;]}
+&lt;/@compress_single_line&gt;" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="TEST_TEST" Description="testing lab" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+DateExported,
+CaseExternalID,
+CaseStatus,
+LastName,
+FirstName,
+BirthDate,
+Gender,
+InvestigationStatus,
+TestName,
+LOINC,
+TestResult,
+SNOMED
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;&lt;#-- Put the selected vars on one line --&gt;
+${.now?string[&quot;yyyyMMdd&quot;]},
+${maven[&quot;Case.ExternalID&quot;]},
+${maven[&quot;Case.Status&quot;]},
+${maven[&quot;Party.LastName&quot;]},
+${maven[&quot;Party.FirstName&quot;]},
+${maven[&quot;Party.BirthDate&quot;]?date(&quot;MM/dd/yyyy&quot;)?string[&quot;yyyy-MM-dd&quot;]},
+&lt;#if maven[&quot;Output.GCDC_TT_FINAL&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.GCDC_TT_FINAL.list&quot;]&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.GCDC_TT_FINAL&quot;]}
+&lt;/@compress_single_line&gt;
+" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="MK TEST REPEATABLES" Description="mk test" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+    &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) }
+&lt;/#macro&gt;
+&lt;@compress_single_line&gt;&lt;#-- column names --&gt;
+DateExported,
+CaseExternalID,
+CaseStatus,
+LastName,
+FirstName,
+BirthDate,
+Gender,
+InvestigationStatus,
+TestName,
+LOINC,
+TestResult,
+SNOMED
+&lt;/@compress_single_line&gt;
+&lt;@compress_single_line&gt;&lt;#-- Put the selected vars on one line --&gt;
+${.now?string[&quot;yyyyMMdd&quot;]},
+${maven[&quot;Case.ExternalID&quot;]},
+${maven[&quot;Case.Status&quot;]},
+${maven[&quot;Party.LastName&quot;]},
+${maven[&quot;Party.FirstName&quot;]},
+${maven[&quot;Party.BirthDate&quot;]?date(&quot;MM/dd/yyyy&quot;)?string[&quot;yyyy-MM-dd&quot;]},
+&lt;#if maven[&quot;Output.InvestigationTestSpecNumDTE2&quot;]?has_content&gt;
+						&lt;#list maven[&quot;Output.InvestigationTestSpecNumDTE2.list&quot;] as SPECNUM&gt;
+						&lt;/#list&gt;
+					&lt;#else&gt;UNK^Unknown^NULLFL
+					&lt;/#if&gt;,
+${maven[&quot;Output.InvestigationTestSpecNumDTE2&quot;]}
+&lt;/@compress_single_line&gt;" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="TRANSFORMATION EXAMPLE" Description="Transformation example" Type="Export" Mode="Case per file" Status="Active" Content="&lt;#macro compress_single_line&gt;
+	&lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt;
+	${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;)}
+&lt;/#macro&gt;
+&lt;#-- CASE Segment --&gt;  
+	&lt;#-- CASE INFO --&gt;CASE|${maven[&quot;Case.CaseID&quot;]}|${maven[&quot;Case.Status&quot;]}|${.now?string(&quot;MM/dd/yyyy hh:mm:ss&quot;)}
+&lt;@compress_single_line&gt;&lt;#-- PERSON Segment --&gt;  
+	&lt;#-- PERSON ID --&gt;PERSON|${maven[&quot;Party.ExternalID&quot;]}
+	&lt;#-- PERSON NAME --&gt;|  
+	&lt;#-- PERSON DOB^AGE --&gt;|  
+	&lt;#-- PERSON GENDER CODE --&gt;|${referenceCodeDescriptionLookup(&quot;GENDER_TO_CODE&quot;, maven[&quot;Party.Gender&quot;])}
+	&lt;#-- PERSON GENDER --&gt;^${maven[&quot;Party.Gender&quot;]} 
+	&lt;#-- PERSON ZIP --&gt;|
+&lt;/@compress_single_line&gt;	
+&lt;#-- MODEL Segment --&gt;  
+&lt;#-- MODEL FOOD --&gt;MODEL|#|FOOD EATEN|&lt;#if maven[&quot;Output.FETOutput&quot;]?has_content&gt;
+											&lt;#list maven[&quot;Output.FETOutput.list&quot;] as eaten&gt;
+											&lt;@compress_single_line&gt;
+											MODEL|#|FOOD EATEN|${eaten}
+											&lt;/@compress_single_line&gt;
+											&lt;/#list&gt;
+											&lt;#else&gt;MODEL|#|FOOD EATEN|No Output
+											&lt;#/if&gt;
+	&lt;#-- MODEL SYMPTOMS --&gt;MODEL|#|SYMPTOMS|  
+	&lt;#-- MODEL HOSP --&gt;MODEL|#|HOSPITALIZED|  
+	&lt;#-- MODEL FACILITY --&gt;MODEL|#|HOSPITAL|" InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+    <DataTransformationDefinition Name="WES TEST ECR IMPORT" Description="" Type="Import" Mode="Case per file" Status="Active" InputType="XML" OutputType="XML" ValidationType="0">
+        <DataTransformationFieldDefinition Type="Section"/>
+        <DataTransformationFieldDefinition Type="Mapping" Validator="None" ValidatorMode="Loose"/>
+        <DataTransformationFieldDefinition Type="Section"/>
+        <DataTransformationFieldDefinition Type="Mapping" Validator="None" ValidatorMode="Loose"/>
+    </DataTransformationDefinition>
+    <DataTransformationDefinition Name="ECR_TEST" Description="adding fields for eCR_20180504" Type="Import" Mode="Case per file" Status="Active" InputType="HL7 2.x" OutputType="XML" ValidationType="0">
+        <DataTransformationFieldDefinition Name="eCR_Message_repository" Type="Mapping" Source="#{MESSAGE_FULL_TEXT}" Target="${Question.ELR_MESSAGE.new}" Validator="None" ValidatorMode="Loose"/>
+    </DataTransformationDefinition>
+    <DataTransformationDefinition Name="CONSILIENCE DATA TRANSFORMATION" Description="MK's data transformation templete" Type="Export" Mode="Case per file" Status="Inactive" Content="&lt;#macro compress_single_line&gt;     &lt;#local captured&gt;&lt;#nested&gt;&lt;/#local&gt; ${captured?replace(&quot;^\\s+|\\s+$|\\n|\\r&quot;, &quot;&quot;, &quot;rm&quot;) } &lt;/#macro&gt; &lt;@compress_single_line&gt;&lt;#-- MSH Segment --&gt;  &lt;#-- MSH 1-4 --&gt;MSH|^~\&amp;|HI-string[&quot;yyyyMMdd&quot;]}  &lt;#-- PID 8 --&gt;|${referenceCodeDescriptionLookup(&quot;ARB_GENDER_TO_CODE&quot;,maven[&quot;Party.Gender&quot;])}  &lt;#-- PID 9 --&gt;|  &lt;#-- PID 10 --&gt;|&lt;#if maven[&quot;Output.DEM152_OUTPUT&quot;]?has_content&gt;       &lt;#list maven[&quot;Output.DEM152_OUTPUT.list&quot;] as race&gt;                 ${referenceCodeDescriptionLookup(&quot;ARB_RACE_TO_CODE&quot;,race)}^ &lt;#--Maven Race Code to cdc Race Code --&gt;                 ${referenceCodeDescriptionLookup(&quot;ARB_RACE_TO_DESC&quot;,race)}^ &lt;#--Maven Race Code to cdc Race Description --&gt;                 2.16.840.1.114222.4.5.232        &lt;#if race_has_next&gt;~&lt;/#if&gt;       &lt;/#list&gt;      &lt;#else&gt;UNK^Unknown^NULLFL      &lt;/#if&gt;  &lt;#-- PID 11 --&gt;|^^^      ${referenceCodeDescriptionLookup(&quot;ARB_STATE_TO_FIPS&quot;,maven[&quot;Party.PrimaryContactPoint.State&quot;])}^      ${maven[&quot;Party.PrimaryContactPoint.PostalCode&quot;]}^      ^^      &lt;#assign county = maven[&quot;Party.PrimaryContactPoint.County&quot;]?replace(&quot; County&quot;, &quot;&quot;) + &quot;, &quot; + maven[&quot;Party.PrimaryContactPoint.State&quot;]&gt;${referenceCodeDescriptionLookup(&quot;ARB_COUNTY_TO_FIPS&quot;,county)}^      ^^  &lt;#-- PID 12-21 --&gt;||||||||||  &lt;#-- PID 22 --&gt;|&lt;#if maven[&quot;Answer.HISPANIC&quot;]?has_content&gt;       ${referenceCodeDescriptionLookup(&quot;ARB_ETHNICITY_TO_CODE&quot;,maven[&quot;Answer.HISPANIC&quot;])}^ &lt;#--Maven Ethnicity Code to cdc Ethnicity Code --&gt;             ${referenceCodeDescriptionLookup(&quot;ARB_ETHNICITY_TO_DESC&quot;,maven[&quot;Answer.HISPANIC&quot;])}^ &lt;#--Maven Ethnicity Code to cdc Ethnicity Description --&gt;             &lt;#if maven[&quot;Answer.HISPANIC&quot;] == &quot;Unknown&quot;&gt;NULLFL             &lt;#else&gt;2.16.840.1.114222.4.5.232             &lt;/#if&gt;      &lt;#else&gt;UNK^Unknown^NULLFL      &lt;/#if&gt; &lt;/@compress_single_line&gt; " InputType="HL7 2.x" OutputType="XML" ValidationType="0"/>
+</MavenIntegrationFormat>

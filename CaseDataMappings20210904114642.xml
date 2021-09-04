@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MavenIntegrationFormat GenerationTime="2021-09-04T11:46:42" GeneratingUserLogin="Not Available" GeneratingSystem="Maven" DateFormat="MM/dd/yyyy">
+    <CaseDataMapDefinition Name="CLUSTER_MAPPING" Description="">
+        <CasePropertyMappingDefinition Property="Case.CaseID" Enumeration="" Question="EVENT_ID" Type="String" Overwrite="true" MappingGroup=""/>
+    </CaseDataMapDefinition>
+    <CaseDataMapDefinition Name="DEFAULT_DR_MAPPING" Description="">
+        <CasePropertyMappingDefinition Property="Case.Product.Type" Question="DISEASE_TYPE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Gender" Enumeration="Person.Gender" Question="GENDER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.TaxID" Question="SOCIAL_SECURITY_NUMBER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.Tract" Question="CENSUS_TRACT" Type="Number" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Type" Question="PARTYTYPE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PARTY_EXTERNALID" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.OfficialPlace" Question="OWNING_JURISDICTION_GIS" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.CreateDate" Question="CASE_CREATE_DATE" Type="Date" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.FirstName" Question="FIRST_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MiddleName" Question="MIDDLE_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.LastName" Question="LAST_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MaidenName" Question="MAIDEN_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.PostalCode" Question="ZIP" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Suffix" Question="SUFFIX" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Alias" Question="ALIAS" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.BirthDate" Question="BIRTH_DATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.DeathDate" Question="DEATH_DATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.WorkPhone" Question="TELEPHONE_WORK" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Fax" Question="FAX_NUMBER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Email" Question="EMAIL" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.County" Question="COUNTY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Country" Question="COUNTRY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.CaseID" Question="EVENT_ID" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.HomePhone" Question="TELEPHONE_HOME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.MobilePhone" Question="TELEPHONE_CELL" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PERSON_IDENTIFIER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.Product.Code" Question="DISEASE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.Product.Code" Question="ORIGINAL_DISEASE_CODE" Type="String" Overwrite="false"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.AddressLine1" Question="STREET" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Party.FullName" Question="FULL_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.City" Question="CITY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.State" Question="STATE" Type="String" Overwrite="true"/>
+    </CaseDataMapDefinition>
+    <CaseDataMapDefinition Name="GCDC_MAPPING">
+        <CasePropertyMappingDefinition Property="Participant.Party.MiddleName" Question="MIDDLE_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.FirstName" Question="FIRST_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.CreateDate" Question="CASE_CREATE_DATE" Type="Date" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.OfficialPlace" Question="OWNING_JURISDICTION_GIS" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PARTY_EXTERNALID" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Type" Question="PARTYTYPE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.Tract" Question="CENSUS_TRACT" Type="Number" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.TaxID" Question="SOCIAL_SECURITY_NUMBER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Gender" Enumeration="Person.Gender" Question="GENDER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.Product.Code" Question="DISEASE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PERSON_IDENTIFIER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.MobilePhone" Question="TELEPHONE_CELL" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.HomePhone" Question="TELEPHONE_HOME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.CaseID" Question="EVENT_ID" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Country" Question="COUNTRY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.County" Question="COUNTY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Email" Question="EMAIL" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.WorkPhone" Question="TELEPHONE_WORK" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.DeathDate" Question="DEATH_DATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.BirthDate" Question="BIRTH_DATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Alias" Question="ALIAS" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Suffix" Question="SUFFIX" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.PostalCode" Question="ZIP" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.State" Question="STATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.City" Question="CITY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.AddressLine1" Question="STREET" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MaidenName" Question="MAIDEN_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.LastName" Question="LAST_NAME" Type="String" Overwrite="true"/>
+    </CaseDataMapDefinition>
+    <CaseDataMapDefinition Name="HIV_STD_MAPPING">
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PARTY_EXTERNALID" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Type" Question="PARTYTYPE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Gender" Enumeration="Person.Gender" Question="GENDER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.Tract" Question="CENSUS_TRACT" Type="Number" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.TaxID" Question="SOCIAL_SECURITY_NUMBER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PERSON_IDENTIFIER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.MobilePhone" Question="TELEPHONE_CELL" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.Product.Code" Question="DISEASE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Country" Question="COUNTRY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.County" Question="COUNTY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.HomePhone" Question="TELEPHONE_HOME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.WorkPhone" Question="TELEPHONE_WORK" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Suffix" Question="SUFFIX" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.PostalCode" Question="ZIP" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.BirthDate" Question="BIRTH_DATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.AddressLine1" Question="STREET" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.State" Question="STATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.City" Question="CITY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MiddleName" Question="MIDDLE_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.FirstName" Question="FIRST_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MaidenName" Question="MAIDEN_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.LastName" Question="LAST_NAME" Type="String" Overwrite="true"/>
+    </CaseDataMapDefinition>
+    <CaseDataMapDefinition Name="TB_MAPPING">
+        <CasePropertyMappingDefinition Property="Participant.Party.FirstName" Question="FIRST_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PARTY_EXTERNALID" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Type" Question="PARTYTYPE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.Tract" Question="CENSUS_TRACT" Type="Number" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.TaxID" Question="SOCIAL_SECURITY_NUMBER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Gender" Enumeration="Person.Gender" Question="GENDER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Case.Product.Code" Question="ORIGINAL_DISEASE_CODE" Type="String" Overwrite="false"/>
+        <CasePropertyMappingDefinition Property="Case.Product.Code" Question="DISEASE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Question="PERSON_IDENTIFIER" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.MobilePhone" Question="TELEPHONE_CELL" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.HomePhone" Question="TELEPHONE_HOME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Country" Question="COUNTRY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.County" Question="COUNTY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.WorkPhone" Question="TELEPHONE_WORK" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.BirthDate" Question="BIRTH_DATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Alias" Question="ALIAS" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Suffix" Question="SUFFIX" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.PostalCode" Question="ZIP" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.State" Question="STATE" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.City" Question="CITY" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.AddressLine1" Question="STREET" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MaidenName" Question="MAIDEN_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.LastName" Question="LAST_NAME" Type="String" Overwrite="true"/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MiddleName" Question="MIDDLE_NAME" Type="String" Overwrite="true"/>
+    </CaseDataMapDefinition>
+    <CaseDataMapDefinition Name="VPD_MAPPING" Description="">
+        <CasePropertyMappingDefinition Property="Participant.Type" Enumeration="" Question="PARTYTYPE" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.Tract" Enumeration="" Question="CENSUS_TRACT" Type="Number" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.TaxID" Enumeration="" Question="SOCIAL_SECURITY_NUMBER" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Gender" Enumeration="Person.Gender" Question="GENDER" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Case.Product.Code" Enumeration="" Question="DISEASE" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Enumeration="" Question="PERSON_IDENTIFIER" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.MobilePhone" Enumeration="" Question="TELEPHONE_CELL" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.HomePhone" Enumeration="" Question="TELEPHONE_HOME" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Output.Output_First_Symptom_Date" Enumeration="" Question="SYMPTOM_ONSET_DATE" Type="Date" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.Country" Enumeration="" Question="COUNTRY" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.County" Enumeration="" Question="COUNTY" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Output.Output_3b_ConfirmingLabDate" Enumeration="" Question="CONFIRMING_LAB_DATE" Type="Date" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.Street2" Enumeration="" Question="STREET2" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.WorkPhone" Enumeration="" Question="TELEPHONE_WORK" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MaidenName" Enumeration="" Question="MAIDEN_NAME" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.LastName" Enumeration="" Question="LAST_NAME" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.MiddleName" Enumeration="" Question="MIDDLE_NAME" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.FirstName" Enumeration="" Question="FIRST_NAME" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.OfficialPlace" Enumeration="" Question="OWNING_JURISDICTION_GIS" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.ExternalID" Enumeration="" Question="PARTY_EXTERNALID" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.DeathDate" Enumeration="" Question="DEATH_DATE" Type="Date" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.BirthDate" Enumeration="" Question="BIRTH_DATE" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Alias" Enumeration="" Question="ALIAS" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.Suffix" Enumeration="" Question="SUFFIX" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.PostalCode" Enumeration="" Question="ZIP" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Party.PrimaryContactPoint.Street1" Enumeration="" Question="STREET1" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.State" Enumeration="" Question="STATE" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.City" Enumeration="" Question="CITY" Type="String" Overwrite="true" MappingGroup=""/>
+        <CasePropertyMappingDefinition Property="Participant.Party.PrimaryContactPoint.AddressLine1" Enumeration="" Question="STREET" Type="String" Overwrite="true" MappingGroup=""/>
+    </CaseDataMapDefinition>
+</MavenIntegrationFormat>

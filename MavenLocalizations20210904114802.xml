@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MavenIntegrationFormat GenerationTime="2021-09-04T11:48:02" GeneratingUserLogin="Not Available" GeneratingSystem="Maven" DateFormat="MM/dd/yyyy">
+    <LocalizationConfigDefinition Name="HOUEDSS-548 Workaround" Description="Localization to serve as a workaround for HOUEDSS-548" ProductCodes="[ALL]">
+        <LocalizationConfigEntryDefinition Name="AllowMultipleAssignments" Value="true"/>
+    </LocalizationConfigDefinition>
+    <LocalizationConfigDefinition Name="Search" ProductCodes="[ALL]">
+        <LocalizationConfigEntryDefinition Name="SearchPage.FromDate" Value="From date"/>
+        <LocalizationConfigEntryDefinition Name="SearchPage.ToDate" Value="To date"/>
+    </LocalizationConfigDefinition>
+</MavenIntegrationFormat>

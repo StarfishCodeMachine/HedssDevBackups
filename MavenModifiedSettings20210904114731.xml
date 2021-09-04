@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MavenIntegrationFormat GenerationTime="2021-09-04T11:47:31" GeneratingUserLogin="Not Available" GeneratingSystem="Maven" DateFormat="MM/dd/yyyy">
+    <ApplicationSetting Name="AdditionalQuestionPackages.UseCurrentDateInsteadOfCaseEffectiveDate" Value="false"/>
+    <ApplicationSetting Name="AllowDeletionOfLoggedOnUsers" Value="False"/>
+    <ApplicationSetting Name="AllowProductChangeAcrossModels" Value="True"/>
+    <ApplicationSetting Name="case.sharing.autocreate" Value="True"/>
+    <ApplicationSetting Name="case.sharing.enabled" Value="True"/>
+    <ApplicationSetting Name="case.sharing.securitycheck" Value="True"/>
+    <ApplicationSetting Name="CasePrint.PrintDocumentID" Value="CASE_TO_HTML_PRINT_TEMPLATE"/>
+    <ApplicationSetting Name="client.information.notification.date" Value="08/29/2021"/>
+    <ApplicationSetting Name="clientCode.errorFolder" Value="\\Tf12b133app01\cpcdms\TEST\error"/>
+    <ApplicationSetting Name="clientCode.exportFolder" Value="\\Tf12b133app01\cpcdms\TEST\exportCSV"/>
+    <ApplicationSetting Name="clientCode.importFolder" Value="\\Tf12b133app01\cpcdms\TEST\importXML"/>
+    <ApplicationSetting Name="cluster.currentProcessingNode" Value="mavenatwva001|1630791994570"/>
+    <ApplicationSetting Name="cluster.enabled" Value="true"/>
+    <ApplicationSetting Name="custom.scheduledReport.outputDirectory.1" Value="\Scheduled Maven Reports TEST1"/>
+    <ApplicationSetting Name="custom.scheduledReport.outputDirectory.2" Value="\Scheduled Maven Reports TEST2"/>
+    <ApplicationSetting Name="custom.scheduledReport.outputDirectory.3" Value="\Scheduled Maven Reports TEST3"/>
+    <ApplicationSetting Name="custom.scheduledReport.outputDirectory.4" Value="\Report_04"/>
+    <ApplicationSetting Name="custom.scheduledReport.reportName.1" Value="HIVSL Provider Report: Out of Care, HIVSL Provider Report: Harris Health, HIVSL Provider Report: HACS, HIVSL Provider Report: St Hope"/>
+    <ApplicationSetting Name="custom.scheduledReport.reportName.2" Value="HIVSL Intakes Completed- Requested Medical Linkage (Scheduled), HIVSL Referral Source Line List (Scheduled)"/>
+    <ApplicationSetting Name="custom.scheduledReport.reportName.3" Value="HIVSL Summary Table - Intakes Completed (Program Assignment) (Scheduled), HIVSL MMP - Line List (Scheduled)"/>
+    <ApplicationSetting Name="custom.scheduledReport.reportName.4" Value="COVID-19 contact tracing triggers for Qualtrics(Scheduled)"/>
+    <ApplicationSetting Name="deduplication.custom.differentiator.name.1=&quot;City Number&quot;" Value="deduplication.custom.differentiator.value.1=Answer.CITYNO"/>
+    <ApplicationSetting Name="deduplication.custom.differentiator.name.2=&quot;State Number&quot;" Value="deduplication.custom.differentiator.value.2=Answer.STATENO"/>
+    <ApplicationSetting Name="deduplication.enabled" Value="True"/>
+    <ApplicationSetting Name="deduplication.keepCaseMIFs" Value="true"/>
+    <ApplicationSetting Name="deduplication.organization.enableLookupByTaxID" Value="False"/>
+    <ApplicationSetting Name="deduplication.partialMatchThreshold" Value="66"/>
+    <ApplicationSetting Name="deduplication.person.enableLookupByTaxID" Value="False"/>
+    <ApplicationSetting Name="deduplication.person.genderMismatchPenalty" Value="15"/>
+    <ApplicationSetting Name="deduplication.person.twinWords" Value="BB,BG,TWIN"/>
+    <ApplicationSetting Name="deduplication.person.yearMismatchPercentage" Value="20"/>
+    <ApplicationSetting Name="disable.backbutton" Value="True"/>
+    <ApplicationSetting Name="email.business.address" Value="HEDSStest_No-reply@houstontx.gov"/>
+    <ApplicationSetting Name="email.enabled" Value="True"/>
+    <ApplicationSetting Name="email.welcome.external.users" Value="False"/>
+    <ApplicationSetting Name="extract.arbonet.date" Value="01/01/2008"/>
+    <ApplicationSetting Name="extract.netss.date" Value="01/01/2008"/>
+    <ApplicationSetting Name="extract.std.date" Value="01/01/2008"/>
+    <ApplicationSetting Name="Global.OfflineMode" Value="False"/>
+    <ApplicationSetting Name="hl7.directory.archive" Value="c:/elr/archive"/>
+    <ApplicationSetting Name="hl7.directory.error" Value="c:/elr/error"/>
+    <ApplicationSetting Name="hl7.directory.process" Value="c:/elr/process"/>
+    <ApplicationSetting Name="hl7.importData.enable" Value="True"/>
+    <ApplicationSetting Name="hl7.logMessages" Value="True"/>
+    <ApplicationSetting Name="hl7.moveFiles" Value="True"/>
+    <ApplicationSetting Name="hl7.processGroupOBXXSL" Value="False"/>
+    <ApplicationSetting Name="hl7.tempLocation" Value="c:/elr/hl7temp"/>
+    <ApplicationSetting Name="hl7251.directory.archive" Value="c:/HL7251Temp/archive"/>
+    <ApplicationSetting Name="hl7251.directory.error" Value="c:/HL7251Temp/error"/>
+    <ApplicationSetting Name="hl7251.directory.process" Value="c:/HL7251Temp/process"/>
+    <ApplicationSetting Name="hl7251.directory.target" Value="c:/HL7251Temp/target"/>
+    <ApplicationSetting Name="hl7251.directory.tempLocation" Value="c:/HL7251Temp/mif"/>
+    <ApplicationSetting Name="houedss.nbs.extract.directory" Value="C:/NBS/ADHOC"/>
+    <ApplicationSetting Name="idgenerator.enforceSameCaseAndExternalIDOnNewCase" Value="True"/>
+    <ApplicationSetting Name="Importer.MatchFirstCaseWhenMultipleMatches" Value="True"/>
+    <ApplicationSetting Name="Importer.MergeDuplicateInvestigations" Value="True"/>
+    <ApplicationSetting Name="Importer.MergeToAnyFullMatchedParty" Value="True"/>
+    <ApplicationSetting Name="Importer.OpenCaseOnUpdate" Value="False"/>
+    <ApplicationSetting Name="Importer.OverwriteExclusion" Value="Model.HISPANIC"/>
+    <ApplicationSetting Name="Importer.PreventOverwriteByUnknown" Value="False"/>
+    <ApplicationSetting Name="Importer.SkipDefaults" Value="False"/>
+    <ApplicationSetting Name="investigation.enableReferenceCodeAndEnumerationValidation" Value="false"/>
+    <ApplicationSetting Name="logging.enableSessionLogs" Value="False"/>
+    <ApplicationSetting Name="mapping.service" Value="com.efinsys.ids.mapping.GMapper"/>
+    <ApplicationSetting Name="mapping.useExternalMapURL" Value="false"/>
+    <ApplicationSetting Name="maven.externalURL" Value="http://mavenatwvb001:8080/maven"/>
+    <ApplicationSetting Name="maven.url" Value="http://localhost:80/maven"/>
+    <ApplicationSetting Name="NumRecentCases" Value="20"/>
+    <ApplicationSetting Name="onlineHelp.password" Value="Ks6-5i!p871t"/>
+    <ApplicationSetting Name="onlineHelp.username" Value="houedss"/>
+    <ApplicationSetting Name="password.digits.min" Value="1"/>
+    <ApplicationSetting Name="password.expiration.notification" Value="15"/>
+    <ApplicationSetting Name="password.length.max" Value="14"/>
+    <ApplicationSetting Name="password.length.min" Value="8"/>
+    <ApplicationSetting Name="password.letters.lowercase.min" Value="1"/>
+    <ApplicationSetting Name="password.letters.min" Value="1"/>
+    <ApplicationSetting Name="password.letters.uppercase.min" Value="1"/>
+    <ApplicationSetting Name="password.reset.enabled" Value="True"/>
+    <ApplicationSetting Name="password.reset.sendNotificationEmail" Value="True"/>
+    <ApplicationSetting Name="password.symbols.min" Value="1"/>
+    <ApplicationSetting Name="print.path" Value="C:\apache-tomcat-7.0.108\webapps\maven\WEB-INF\classes\com\efinsys\ids\print"/>
+    <ApplicationSetting Name="printDocument.populatorClass" Value="com.efinsys.ids.print.CustomPrintDocumentPopulator"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.CustomMessageResourcesFactory" Value="02/18/2015 08:51 AM"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.GlobalApplicationSettings" Value="08/05/2021 17:04:53.717 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.InvestigationTemplateManager" Value="08/17/2021 22:37:06.387 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.LocalizationManager" Value="06/22/2016 12:11 PM"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.MessageResources" Value="01/31/2017 03:09 PM"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.ModelRegistry" Value="09/03/2021 22:53:36.817 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.PartyManager" Value="11/19/2020 00:51:14.117 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.ProductManager" Value="08/17/2021 19:15:35.547 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.ReferenceCodeManager" Value="09/03/2021 16:10:11.077 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.ReportManager" Value="09/03/2021 19:20:58.797 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.UserGroupManager" Value="08/27/2021 16:39:44.370 UTC"/>
+    <ApplicationSetting Name="refreshable.lastUpdate.UserManager" Value="09/03/2021 22:17:23.517 UTC"/>
+    <ApplicationSetting Name="report.answerTableAdHocReportsForceQueued" Value="false"/>
+    <ApplicationSetting Name="report.path" Value="\\TF12B133APP01\c$\Scheduled Maven Reports TEST\"/>
+    <ApplicationSetting Name="report.schedulerClass" Value="com.efinsys.ids.core.process.CustomReportSchedulerProcess"/>
+    <ApplicationSetting Name="search.case.rememberResults" Value="False"/>
+    <ApplicationSetting Name="search.enabled" Value="true"/>
+    <ApplicationSetting Name="search.lastIndex.Time" Value="08/05/2021 11:47 AM"/>
+    <ApplicationSetting Name="search.lastIndex.Time.mavenatwva001" Value="09/04/2021 11:27 AM"/>
+    <ApplicationSetting Name="security.allowConcurrentLogins" Value="True"/>
+    <ApplicationSetting Name="security.cacheSize" Value="25000"/>
+    <ApplicationSetting Name="security.caseCreatorDefaultAccess" Value="False"/>
+    <ApplicationSetting Name="security.maxLoginAttempts" Value="5"/>
+    <ApplicationSetting Name="server.showTestEnvironmentBanner" Value="true"/>
+    <ApplicationSetting Name="server.showTestEnvironmentWatermark" Value="true"/>
+    <ApplicationSetting Name="servlet.compress" Value="False"/>
+    <ApplicationSetting Name="ShowInvestigationTemplateOptions" Value="true"/>
+    <ApplicationSetting Name="state.default" Value="TX"/>
+    <ApplicationSetting Name="support.proactiveExceptionReporting" Value="False"/>
+    <ApplicationSetting Name="task.update.emailnotice" Value="False"/>
+    <ApplicationSetting Name="userpickers.showInactiveUsers" Value="false"/>
+    <ApplicationSetting Name="webservice.enabled" Value="true"/>
+    <ApplicationSetting Name="WorkflowEmailNotification.lastRunTime" Value="07/09/2021 11:03:17.701"/>
+    <ApplicationSetting Name="workflowQuery.maxResultsPerQuery" Value="5000"/>
+    <PostImportQuery Name="Delete setting [Importer.EnableEnhancedValidation]" Query="delete from ids_settings where name='Importer.EnableEnhancedValidation'"/>
+</MavenIntegrationFormat>

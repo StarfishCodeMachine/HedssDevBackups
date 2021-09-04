@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MavenIntegrationFormat GenerationTime="2021-09-04T11:48:12" GeneratingUserLogin="Not Available" GeneratingSystem="Maven" DateFormat="MM/dd/yyyy">
+    <PartyDataConfigurationDefinition Name="Cluster Data" Description="Cluster Data" Deidentified="false" PartyType="Case Party" PartyCategory="Cluster" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Age" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressLine" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Phone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default Case Party Data" Description="Person Data" Deidentified="false" PartyType="Case Party" PartyCategory="" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Age" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressLine" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Phone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default Deidentified Case Party Data" Description="Deidentified Case Party Data" Deidentified="true" PartyType="Case Party" PartyCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property" Deidentified="true"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Status" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="SecondaryEmail" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property" Deidentified="true"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property" Deidentified="false"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default Organization Contact Data" Description="Person Data" Deidentified="false" PartyType="Organization Contact" PartyCategory="" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Age" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressLine" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Phone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default Organization Data" Description="Organization Data" Deidentified="false" PartyType="Case Party" PartyCategory="Organization" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Status" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Age" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="SecondaryEmail" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property" Deidentified="false"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default Organization Reference Data" Description="Organization Reference Data" Deidentified="false" PartyType="Reference" PartyCategory="Organization" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Status" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Age" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="SecondaryEmail" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property" Deidentified="false"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default Reference Data" Description="Person Data" Deidentified="false" PartyType="Reference" PartyCategory="" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Age" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressLine" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Phone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default Resource Site" Description="Resource Site Data" Deidentified="false" PartyType="Resource Site">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Status" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="SecondaryEmail" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property" Deidentified="false"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="Default User Data" Description="Person Data" Deidentified="false" PartyType="User" PartyCategory="" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Title" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="Age" Type="Property"/>
+        <PartyConfigurationFieldDefinition Name="DeduplicationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressLine" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Phone" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property"/>
+    </PartyDataConfigurationDefinition>
+    <PartyDataConfigurationDefinition Name="DR Data" Description="Party Configuration Data" Deidentified="false" PartyType="Case Party" PartyCategory="Person" PartyReferenceCategory="">
+        <PartyConfigurationFieldDefinition Name="Alias" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="BirthDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="DeathDate" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="ExternalID" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="FirstName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="FullName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Gender" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LastName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="LivingStatus" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MiddleName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="MothersMaidenName" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Status" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="Suffix" Type="Property" Deidentified="false"/>
+        <PartyConfigurationFieldDefinition Name="TaxID" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Type" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street1" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Street2" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="City" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="State" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="PostalCode" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="County" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Country" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="HomePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="MobilePhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="WorkPhone" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Pager" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Email" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="SecondaryEmail" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="Fax" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ContactMethod" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="OfficialPlace" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="ResidenceType" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="AddressStatus" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="DefaultCountry" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="PrimaryAddress" Type="Property" Deidentified="false"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Latitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Longitude" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Tract" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="Block" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="GeocodeQuality" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationStatus" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField1" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField2" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField3" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField4" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField5" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField6" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="CustomField7" Type="Property"/>
+        <ContactPointConfigurationFieldDefinition Name="ValidationDiffs" Type="Property"/>
+    </PartyDataConfigurationDefinition>
+</MavenIntegrationFormat>
